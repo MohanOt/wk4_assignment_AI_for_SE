@@ -75,3 +75,9 @@ AIOps can analyze historical deployment telemetry and automatically promote cana
 
 Example 2 — Automated root-cause triage & alert prioritization:
 By correlating logs, traces, and metrics, AIOps can surface the most probable root cause and prioritize alerts. This reduces noisy alerts and helps engineers focus on the highest-impact issues, shortening mean time to resolution (MTTR).
+
+
+
+
+## Task 1 — AI vs Manual:
+The AI-style implementation uses Python’s built-in sorted() with a simple key accessor (dict.get), producing concise, readable code and leveraging Python’s highly optimized Timsort algorithm. This solution is ideal when input types are consistent (all numeric or all strings) because it is short, expressive, and easy to maintain. However, in real-world datasets, dictionary values often contain missing keys or mixed types (ints, floats, strings, booleans). In such cases, sorted() can raise TypeError when Python cannot compare differing types. The manual implementation addresses these issues by normalizing values into a tuple that encodes missingness and type rank (numeric < string < other), then sorting in-place for memory efficiency. Both approaches use the same underlying algorithmic complexity (O(n log n)), but the manual version adds robustness at the cost of additional code. Practically, the best workflow is hybrid: accept concise AI-generated suggestions for consistent datasets, then harden them—adding normalization and missing-key handling—before production use. This balances productivity gains from AI with the safety of human-reviewed adjustments.
