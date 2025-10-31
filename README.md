@@ -63,9 +63,39 @@ def manual_sort(data, key):
 
 
 Analysis (200 words):
-AI-assisted tools like GitHub Copilot instantly suggest concise and efficient code using Python’s built-in sorted() function. In contrast, the manual implementation uses nested loops, increasing time complexity from O(n log n) to O(n²). The AI-generated code is cleaner, more readable, and significantly faster, saving developer time and reducing cognitive load. Such automation demonstrates how AI enhances productivity, especially for repetitive or well-defined tasks.
+AI-assisted tools like GitHub Copilot instantly suggest concise and efficient code using Python's built-in sorted() function. In contrast, the manual implementation uses nested loops, increasing time complexity from O(n log n) to O(n²). The AI-generated code is cleaner, more readable, and significantly faster, saving developer time and reducing cognitive load. Such automation demonstrates how AI enhances productivity, especially for repetitive or well-defined tasks.
 
-Result File: task1_results.txt
+### Task 1 Results:
+```plaintext
+=== AI in Software Engineering - Week 4 ===
+Task 1: AI-Powered Code Completion (Sorting dictionaries)
+
+Run timestamp: 2025-11-01 00:48:18.475457
+------------------------------------------------------------
+Original dataset:
+
+========== Original ==========
+{'id': 1, 'score': 10}
+{'id': 2, 'score': None}
+{'id': 3}
+{'id': 4, 'score': 7}
+{'id': 5, 'score': '5'}
+{'id': 6, 'score': 3.5}
+{'id': 7, 'score': 10}
+{'id': 8, 'score': True}
+==============================
+
+========== AI-suggested result (time 0.000072s) ==========
+{'id': 8, 'score': True}
+{'id': 6, 'score': 3.5}
+{'id': 5, 'score': '5'}
+{'id': 4, 'score': 7}
+{'id': 1, 'score': 10}
+{'id': 7, 'score': 10}
+{'id': 2, 'score': None}
+{'id': 3}
+==============================
+```
 
 # Task 2: Automated Testing with AI
 
@@ -87,7 +117,31 @@ driver.find_element(By.ID, "login").click()
 # Summary:
 AI-driven test frameworks like Testim.io enhance Selenium by automatically maintaining test scripts when UI elements change. Traditional manual testing requires frequent updates, while AI-assisted testing detects DOM changes, locates elements intelligently, and adapts test cases. The test achieved over 95% success in validating login credentials, showing that AI improves test reliability and reduces maintenance. This automation leads to faster regression testing and greater CI/CD efficiency.
 
-Result Files: task2_results.txt, test screenshots.
+### Task 2 Results:
+```plaintext
+=== AI in Software Engineering - Task 2: Automated Testing ===
+
+--- Test started at 2025-11-01 01:09:48.192924 ---
+Testing credentials: student/Password123
+Result: PASS
+Screenshot saved: screenshots/student_True.png
+--- End of Test ---
+
+--- Test started at 2025-11-01 01:09:59.659264 ---
+Testing credentials: wrong/wrong
+Result: PASS
+Screenshot saved: screenshots/wrong_False.png
+--- End of Test ---
+
+Testing completed successfully.
+```
+
+### Test Screenshots:
+#### Successful Login Test
+![Successful Login Test](screenshots/student_True.png)
+
+#### Failed Login Test
+![Failed Login Test](screenshots/wrong_False.png)
 
 # Task 3: Predictive Analytics for Resource Allocation
 
@@ -96,8 +150,10 @@ Model Used: RandomForestClassifier
 Goal: Predict resource allocation risk using classification.
 
 Performance:
-
 Accuracy: 97.3%
+
+### Model Visualization:
+![Confusion Matrix](screenshots/task3_confusion_matrix.png)
 
 F1-Score: 0.97
 
