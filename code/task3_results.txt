@@ -1,0 +1,18 @@
+=== Task 3: Predictive Analytics Results ===
+Run timestamp: 2025-11-01 01:24:25.779453
+Model Used: RandomForestClassifier
+Accuracy: 96.49%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.93      0.95        43
+           1       0.96      0.99      0.97        71
+
+    accuracy                           0.96       114
+   macro avg       0.97      0.96      0.96       114
+weighted avg       0.97      0.96      0.96       114
+
+Confusion Matrix:
+[[40  3]
+ [ 1 70]]

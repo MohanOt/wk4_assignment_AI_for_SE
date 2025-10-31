@@ -1,0 +1,15 @@
+=== Task 4: AI Code Optimization Results ===
+Run timestamp: 2025-11-01 01:27:32.998487
+
+
+AI Suggestion:
+Instead of iterating manually through the list to compute a sum,
+use NumPy's vectorized operations which are optimized in C.
+Optimized version:
+    def efficient_sum(numbers):
+        return np.sum(numbers)
+
+=== Performance Comparison ===
+Inefficient Loop: 4.1649 seconds
+Efficient NumPy: 0.0170 seconds
+Speed Improvement: 244.75x faster

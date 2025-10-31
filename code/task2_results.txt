@@ -1,0 +1,16 @@
+=== AI in Software Engineering - Task 2: Automated Testing ===
+
+--- Test started at 2025-11-01 01:09:48.192924 ---
+Testing credentials: student/Password123
+Result: PASS
+Screenshot saved: screenshots/student_True.png
+--- End of Test ---
+
+
+--- Test started at 2025-11-01 01:09:59.659264 ---
+Testing credentials: wrong/wrong
+Result: PASS
+Screenshot saved: screenshots/wrong_False.png
+--- End of Test ---
+
+ Testing completed successfully.

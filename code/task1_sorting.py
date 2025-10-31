@@ -16,8 +16,30 @@ from typing import List, Dict, Any
 
 def sort_dicts_by_key_ai(items: List[Dict[str, Any]], key_name: str, reverse: bool = False) -> List[Dict[str, Any]]:
    
-    # Use .get(key_name, None) as key accessor so missing keys return None
-    return sorted(items, key=lambda d: d.get(key_name, None), reverse=reverse)
+    def key_func(d):
+        value = d.get(key_name, None)
+        # Handle None values
+        if value is None:
+            return (1 if not reverse else -1, 0, None)
+        
+        # Convert booleans to integers
+        if isinstance(value, bool):
+            value = int(value)
+        
+        # Handle different types
+        if isinstance(value, (int, float)):
+            return (0, 0, float(value))
+        elif isinstance(value, str):
+            try:
+                # Try to convert string to number if possible
+                return (0, 0, float(value))
+            except ValueError:
+                return (0, 1, value)
+        
+        # Fallback for other types
+        return (0, 2, str(value))
+    
+    return sorted(items, key=key_func, reverse=reverse)
 
 
 def sort_dicts_by_key_manual(items: List[Dict[str, Any]], key_name: str, reverse: bool = False) -> List[Dict[str, Any]]:
